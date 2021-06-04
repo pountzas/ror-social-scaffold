@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-TBA
+to be added
 
 ## Getting Started
 
