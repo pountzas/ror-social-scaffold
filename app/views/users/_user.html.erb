@@ -2,5 +2,10 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+    <% if current_user.friends_with?(user) %>
+      <%= link_to 'friend request', user_friendships_path(@user), method: :post %>
+    <% elsif %>
+      <%= link_to 'decline request', user_friendship_path(@user), method: :destroy %>
+    <% end %>
   </span>
 </li>

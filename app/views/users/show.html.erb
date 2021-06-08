@@ -6,4 +6,5 @@
       <%= render @posts %>
     </ul>
   </article>
+  <%= link_to 'friend request', user_friendships_path(@user), method: :post %>
 </section>
