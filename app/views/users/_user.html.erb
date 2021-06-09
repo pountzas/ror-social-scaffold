@@ -2,10 +2,17 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-    <% if current_user.friends_with?(user) %>
-      <%= link_to 'friend request', user_friendships_path(@user), method: :post %>
-    <% elsif %>
-      <%= link_to 'decline request', user_friendship_path(@user), method: :destroy %>
+    <% if current_user != user %>
+      <% if !Invitation.reacted?(current_user.id, user.id) %>
+        <%= link_to 'Send Invitation',
+        invitations_create_path(ids: {id1: current_user.id, id2: user.id}), class: 'profile-link' %>
+      
+      <% elsif Invitation.confirmed_record?(current_user.id, user.id) %>
+        <%= link_to 'delete friend',
+        invitations_destroy_path(ids: {id1: current_user.id, id2: user.id}), class: 'profile-link' %>
+      <% else %>
+      <span>Pending request</span>
+      <% end %>
     <% end %>
   </span>
 </li>
