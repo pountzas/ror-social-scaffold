@@ -39,6 +39,8 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/EndOfLine:
+  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
@@ -56,4 +58,6 @@ Style/HashEachMethods:
 Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
+  Enabled: false
+Lint/ScriptPermission:
   Enabled: false
