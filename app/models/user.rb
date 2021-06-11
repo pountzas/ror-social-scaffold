@@ -1,7 +1,4 @@
 class User < ApplicationRecord
-  # has_friendship
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -13,6 +10,16 @@ class User < ApplicationRecord
 
   has_many :invitations
   has_many :pending_invitations, -> { where confirmed: false }, class_name: 'Invitation', foreign_key: 'friend_id'
+  has_many :confirmed_invitations, -> { where confirmed: true }, class_name: 'Invitation'
+
+  has_many :friends, through: :confirmed_invitations
+  has_many :pending_friends, through: :pending_invitations, source: :friend
+  has_many :inverted_invitations, -> { where confirmed: false }, class_name: 'Invitation', foreign_key: 'friend_id'
+  has_many :friend_requests, through: :inverted_invitations
+
+  def friends_and_own_posts
+    Post.where(user: (friends.to_a << self))
+  end
 
   def friends
     friends_i_sent_invitation = Invitation.where(user_id: id, confirmed: true).pluck(:friend_id)

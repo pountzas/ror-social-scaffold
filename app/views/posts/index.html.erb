@@ -7,9 +7,9 @@
 
 <article class="timeline">
   <h3>
-    Recent posts
+    Friend posts
   </h3>
   <ul class="posts">
-    <%= render @timeline_posts %>
+    <%= render @timeline_posts.where(user: [current_user.friends, current_user].flatten) %>    
   </ul>
 </article>
