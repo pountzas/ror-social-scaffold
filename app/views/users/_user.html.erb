@@ -8,8 +8,9 @@
         invitations_create_path(ids: {id1: current_user.id, id2: user.id}), class: 'profile-link' %>
       
       <% elsif Invitation.confirmed_record?(current_user.id, user.id) %>
+        <% invitation_id = Invitation.find_invitation(current_user.id, user.id) %>
         <%= link_to 'delete friend',
-        invitations_destroy_path(ids: {id1: current_user.id, id2: user.id}), class: 'profile-link' %>
+        invitations_destroy_path(id: invitation_id), method: :delete, class: 'profile-link' %>
       <% else %>
       <span>Pending request</span>
       <% end %>
