@@ -1,6 +1,11 @@
-# Scaffold for social media app with Ruby on Rails
+# Stay in touch App
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This project is a social media app build with RoR. It allows users to:
+- send friend requests
+- accept or dicline friend invitations
+- create posts
+- make comments on posts
+- like or dislike the posts
 
 ## Built With
 
@@ -9,8 +14,8 @@
 
 ## Live Demo
 
-TBA
-
+### Heroku 
+to be added
 
 ## Getting Started
 
@@ -67,11 +72,15 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+https://dashboard.heroku.com/apps/ror-social-friends
 
-## Authors
+## Author
 
-TBA
+👤 **Nikos Pountzas**
+
+- GitHub: [pountzas](https://github.com/pountzas)
+- Twitter: [@pountzas20](https://twitter.com/pountzas20)
+- LinkedIn: [Nikos Pountzas](https://www.linkedin.com/in/nik
 
 ## 🤝 Contributing
 
@@ -85,9 +94,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- Microverse ( https://www.microverse.org/ )
 
 ## 📝 License
 
-TBA
-
+This project is [MIT](./MIT.md) licensed.
