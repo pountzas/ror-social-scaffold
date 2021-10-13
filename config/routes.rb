@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'posts#index'
 
   devise_for :users
@@ -15,4 +14,8 @@ Rails.application.routes.draw do
   get 'invitations/create'
   delete 'invitations/destroy/:id', to: 'invitations#destroy', as: 'invitations_destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace 'api' do
+    resources :posts, only: [:index, :show]
+  end
 end
