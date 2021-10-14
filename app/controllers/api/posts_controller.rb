@@ -4,8 +4,8 @@ class Api::PostsController < ApiController
     render json: { posts: @posts }
   end
 
-  def show
-    @post = Post.find(params[:id]).comments
-    render json: { comments: @post }
-  end
+  # def show
+  #   @post = Post.find(params[:id])
+  #   render json: @post
+  # end
 end
