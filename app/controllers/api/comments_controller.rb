@@ -13,5 +13,4 @@ class Api::CommentsController < ApiController
     @comment = Post.find(params[:id]).comments
     render json: { comments: @comment }
   end
-
 end
