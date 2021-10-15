@@ -72,7 +72,7 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-https://dashboard.heroku.com/apps/ror-social-friends
+https://ror-social-friends.herokuapp.com/users/sign_in
 
 ## Author
 
